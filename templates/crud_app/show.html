@@ -1,0 +1,47 @@
+{% load static %}
+
+
+{% block showdata %}
+<div class="container show">
+  <h2 class="text-center mt-3">RETRIVE DATA</h2>
+  <table class="table table-hover mt-5 tb">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">QUALIFICATION</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if data %}
+      {% for dt in data %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{dt.name}}</td>
+        <td>{{dt.age}}</td>
+        <td>{{dt.qualification}}</td>
+        <td>{{dt.gender}}</td>
+        <td>
+          <a href="{% url 'update' dt.id %}" class="btn btn-success p-1 tb">Update</a> 
+          <a href="{% url 'delete' dt.id  %}" class="btn btn-danger p-1 tb">Delete</a>
+        </td>
+      </tr>
+      
+      {% endfor %}
+      {% else %}
+      
+    
+      <div class="alert alert-danger text-center text-white" role="alert">
+        NO DATA TO SHOW!
+      </div>
+    
+    
+      {% endif %}
+    </tbody>
+  </table>
+
+</div>
+{% endblock %}

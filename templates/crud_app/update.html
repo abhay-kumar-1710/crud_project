@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container px-5">
+    <h2 class="text-center mt-3 mb-4">UPDATE DATA</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input class="btn btn-success my-4 p-2 mx-2" type="submit" value="Update">
+        <a href="{% url 'home' %}" class="btn btn-danger p-2">Cancel</a>
+    </form>
+</div>
+      
+{% endblock %}

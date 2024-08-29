@@ -1,0 +1,15 @@
+{% load static %}
+
+
+{% block adddata %}
+<div class="container add">
+    <h2 class="text-center mt-3 mb-4">CREATE DATA</h2>
+    
+        <form method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input class="btn btn-primary mt-4" type="submit" value="Submit">
+        </form>
+
+</div>
+{% endblock %}

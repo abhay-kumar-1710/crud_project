@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container msg">
+
+    <div class="alert alert-success text-center text-white mt-4" role="alert">
+        Welcome To My CRUD Project!
+      </div>
+</div>
+
+<div class="home py-2">
+    {% block adddata %}
+        {% include "crud_app/add.html" %}
+    {% endblock %}
+
+    {% block showdata %}
+        {% include "crud_app/show.html" %}
+    {% endblock %}
+</div>
+
+{% endblock %}
